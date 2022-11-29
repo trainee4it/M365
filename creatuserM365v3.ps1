@@ -23,6 +23,13 @@ foreach($user in $AllUsers)
         New-MsolUser -UserPrincipalName ($user.Name + $NewUPnSuffix) -DisplayName $user.Name  -usageLocation 'nl' -Password $user.password -LicenseAssignment (Get-MsolAccountSku).accountskuid[2]
 
     }
+    
+    else
+    {
+        
+        'Ok deze gebruiker importeren we niet ' +$user.Name
+    
+    }
 
 }
 
