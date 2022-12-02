@@ -1,3 +1,6 @@
+$Array = @('Equals','getHashCode','gettype','ToString')
+((Import-Csv -Path C:\right\fault.csv) | Get-Member).name  | where {$Array -notcontains $_}
+
 
 if(!(Test-Path -Path 'C:\right'))
 {
