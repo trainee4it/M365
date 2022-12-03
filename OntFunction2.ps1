@@ -1,5 +1,7 @@
-$Array = @('Equals','getHashCode','gettype','ToString')
-((Import-Csv -Path C:\right\fault.csv) | Get-Member).name  | where {$Array -notcontains $_}
+
+
+#$array = @('equals','GetHashCode','Tostring','Gettype')
+#$Csv = ((Import-Csv -Path C:\right\fault.csv) | Get-Member)  |Where-Object {$array -notcontains $_.Name}
 
 
 if(!(Test-Path -Path 'C:\right'))
@@ -10,7 +12,7 @@ if(!(Test-Path -Path 'C:\right'))
 }
 
 
-Write-Host "Did you place a file in the c:\right folder named fault.csv  (j/n) "
+Write-Host "Did you place a file in the c:\right folder named fault.csv  (y/n) "
 $Answer = Read-Host
 while($Answer -ne 'y')
 {
